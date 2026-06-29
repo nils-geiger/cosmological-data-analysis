@@ -1,9 +1,5 @@
 # Cosmological Data Analysis
 
-Comparison of numerical outputs under varying preprocessing configurations.
-
-Goal: identify stability vs deviation across processing choices.
-
 10,000 simulated datasets  
 512³ grid resolution  
 Fourier-based generation  
@@ -11,15 +7,12 @@ Fourier-based generation
 
 ---
 
-## Key results
-
 ![Key Results](reports/figures/key_results.png)
 
-One configuration produces stable alignment with reference outputs.
+One configuration produces stable alignment with reference outputs.  
+All other configurations deviate consistently.
 
-All other configurations show consistent deviation patterns.
-
-Differences are not random.
+No randomness observed in deviation structure.
 
 ---
 
@@ -27,11 +20,11 @@ Differences are not random.
 
 ![Model Comparison](reports/figures/model_comparison.png)
 
-Same datasets processed with different configurations.
+Same datasets, different preprocessing paths.
 
-Output changes depending on preprocessing choice.
+Output shifts depending on configuration choice.
 
-Deviations remain stable across full range.
+Pattern is stable across full parameter range.
 
 ---
 
@@ -41,9 +34,11 @@ Deviations remain stable across full range.
 
 Difference to reference output.
 
-Structure is configuration-dependent.
+Not noise.
 
-Some ranges are more sensitive than others.
+Deviations repeat across runs.
+
+Some parameter regions more sensitive than others.
 
 ---
 
@@ -53,18 +48,21 @@ Some ranges are more sensitive than others.
 - 512³ grid  
 - periodic boundary conditions  
 - Fourier-space generation  
-- repeated runs with identical inputs  
+- repeated runs on identical inputs  
+- configuration changes only  
+
+Raw structure identical across all runs.
 
 ---
 
 ## Processing
 
-- dataset generation  
-- Fourier transformation  
+- dataset generation in batch execution  
+- Fourier transform applied per dataset  
 - smoothing across multiple scales  
-- output computation  
-- repeated evaluation  
-- configuration variation only  
+- identical pipeline reused across runs  
+- only configuration varies  
+- deterministic computation
 
 ---
 
@@ -72,26 +70,27 @@ Some ranges are more sensitive than others.
 
 - multiple reference outputs  
 - full-range evaluation  
-- configuration sensitivity  
-- repeatable deviation structure  
+- configuration-dependent results  
+- deviation patterns repeat consistently  
 
 ---
 
-## Outcome
+## Pipeline
 
-Some configurations produce stable results across the full range.
-
-Others show systematic deviations depending on preprocessing choice.
-
-Stability is configuration-dependent.
+C++ batch execution  
+FFT-based processing  
+fixed computation steps  
+parameter sweep only  
+no structural changes between runs  
 
 ---
 
 ## Notes
 
-Synthetic data only.  
-No external measurements.  
-Limited parameter space.
+Synthetic data only  
+No external measurements  
+Restricted configuration space  
+Results depend entirely on preprocessing choice  
 
 ---
 
