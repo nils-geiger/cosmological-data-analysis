@@ -1,71 +1,101 @@
 # Cosmological Data Analysis
 
+Comparison of numerical outputs under varying preprocessing configurations.
+
+Goal: identify stability vs deviation across processing choices.
+
 10,000 simulated datasets  
 512³ grid resolution  
-50 smoothing levels per dataset  
-Fourier-space processing  
+Fourier-based generation  
+50 smoothing steps per run  
+
+---
+
+## Key results
 
 ![Key Results](reports/figures/key_results.png)
 
+One configuration produces stable alignment with reference outputs.
+
+All other configurations show consistent deviation patterns.
+
+Differences are not random.
+
 ---
 
-## Analysis Results
+## Output comparison
 
 ![Model Comparison](reports/figures/model_comparison.png)
 
-Output depends on preprocessing method.  
-One configuration aligns with reference outputs.  
-All other configurations show structured deviations linked to processing choices.
+Same datasets processed with different configurations.
+
+Output changes depending on preprocessing choice.
+
+Deviations remain stable across full range.
 
 ---
+
+## Residuals
 
 ![Residual Analysis](reports/figures/residual_analysis.png)
 
-Difference between computed values and reference curves.  
-Systematic deviations across parameter ranges.  
-Largest differences depend on configuration.
+Difference to reference output.
+
+Structure is configuration-dependent.
+
+Some ranges are more sensitive than others.
 
 ---
 
-## Data Set
+## Data
 
 - 10,000 datasets  
 - 512³ grid  
 - periodic boundary conditions  
 - Fourier-space generation  
-- 50 smoothing steps  
-- multiple configurations  
+- repeated runs with identical inputs  
 
 ---
 
-## Analytical Workflow
+## Processing
 
-- generate datasets  
-- apply Fourier processing  
-- smooth signals  
-- compute outputs  
-- compare results  
-- calculate deviations  
+- dataset generation  
+- Fourier transformation  
+- smoothing across multiple scales  
+- output computation  
+- repeated evaluation  
+- configuration variation only  
 
 ---
 
-## Model Comparison
+## Comparison
 
 - multiple reference outputs  
-- full-range comparison  
-- configuration-dependent results  
-- structured deviations across parameter space  
+- full-range evaluation  
+- configuration sensitivity  
+- repeatable deviation structure  
 
 ---
 
-## Technical Implementation
+## Outcome
 
-- C++ implementation  
-- batch processing  
-- FFT-based computation  
-- deterministic runs  
-- identical processing steps per dataset  
+Some configurations produce stable results across the full range.
+
+Others show systematic deviations depending on preprocessing choice.
+
+Stability is configuration-dependent.
 
 ---
 
-## Repository Structure
+## Notes
+
+Synthetic data only.  
+No external measurements.  
+Limited parameter space.
+
+---
+
+## Source
+
+Bachelor Thesis (University of Heidelberg, 2020)  
+Colloquium presentation (2020)
